@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="format">
+
+</head>
+<body style="background-color: azure;">
+    <header class="head">
+        <div class="cabeza">
+            <br>
+            <a href="/">
+                <span id = "Logo">Nombre de la pagina</span>
+            </a>
+            <span class="btn-head">
+                <button class="btn" onclick="window.location.href = 'iniciar'" >Iniciar Secion</button>
+                <button class="btn" onclick="window.location.href = 'registrar'" >Registrarse</button>
+            </span>
+        </div>
+    </header>
+    <main>
+        <form action="" class="formulario", id="formulario">
+            <!-- Grupo: usuario-->
+            <div class="formulario_grupos", id="registrarse_usuario">
+                <label for="usuario" class="formulario_labels">usuario</label>
+                <div class="formulario_inputs">
+                    <input type="text" name="usuario" id="usuario" placeholder="usuario123">
+                    <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario_input_error">aaaaaaa</p>
+            </div>
+
+            <!-- Grupo: password-->
+            <div class="formulario_grupos", id="registrarse_password">
+                <label for="password" class="formulario_labels">password</label>
+                <div class="formulario_inputs">
+                    <input type="text" name="password" id="password">
+                    <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario_input_error">aaaaaaa</p>
+            </div>
+
+            <div class="formulario_mensaje" id="formulario_mensaje">
+                <p><b>ERROR:</b>por favor llene todos los campos</p>
+            </div>
+
+            <div class="formmulario_grupos formulario_btn-enviar">
+                <button type="submit" class="formulario_btn" value="iniciar">iniciar sesion</button>
+            </div>
+
+        </form>
+
+        <button class="btn" onclick="window.location.href = '/'" >volver</button>
+        
+    </main>
+    <hr>
+    <FOoter>
+        AAAAA
+    </FOoter>
+</body>
+</html>

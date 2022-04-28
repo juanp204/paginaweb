@@ -1,0 +1,181 @@
+.btn{
+    background-color: rgba(0.5, 0.5, 0.5, 0.3);
+    border-color: rgba(1, 1, 1, 0.5);
+}
+.head {
+    display: flex;
+    border: inset;
+    margin: 0 auto;
+    width: 100%;
+}
+.cabeza{
+    /*background-color: rgb(171, 171, 228);*/
+    width: 88%;
+    position: static;
+    margin: 0 auto;
+}
+.btn-head{
+    transform: translate(0,50%);
+    /*margin-top: 0.9%;*/
+    float: right;
+    background-color: aqua;
+
+}
+.dropdown-container{
+    background-color: aqua;
+    display: inline;
+    position: relative;
+}
+.dropdown-container ul{
+    list-style-type: none;
+    left: -100px;
+    top: 10px;
+    position:absolute;
+    max-height:0px;
+    overflow:hidden;
+    transition: all 0.5s;
+    padding: 0px;
+}
+.dropdown-container ul li{
+    width: 200px;
+    background-color: rgb(200,50,50);
+    color: white;
+}
+.dropdown-container ul.show{
+    max-height: 400px;
+    transition: all 0.5s;
+}
+.log {
+    margin: 0px 10px 0px 800px;
+    background-color: black;
+    background-clip: border-box;
+    border: solid 5px blue;
+}
+#Logo {
+    
+    float: left;
+    color: aqua;
+    text-align: center;
+    font-size: 48px;
+}
+.centro {
+    background-color: aquamarine;
+    height: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+/*.registrar{
+
+}*/
+main{
+    max-width: 670px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+}
+
+.formulario_grupos{
+    display: inline-block;
+    position: relative;
+    margin: 20px 0px 25px 0px;
+}
+
+.formulario_inputs{
+    width: 90%;
+    background: white;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height:  45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+
+.formulario_inputs :focus {
+    border:  3px solid rgb(105, 105, 172);
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+.formulario_input_error{
+    position: absolute;
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+/*.formulario_input_error-activo{
+    display: block;
+}*/
+.formulario_validacion-estado{
+    position: absolute;
+    right: 35px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    /*opacity: 0;*/
+}
+
+.forulario_grupo-terminos,
+.formulario_mensaje,
+.formulario_btn-enviar{
+    grid-column: span 2;
+    margin: 10px;
+}
+.formulario_mensaje{
+    height: 45px;
+    line-height: 45px;
+    background-color: rgb(210, 56, 56);
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+.formulario_mensaje-activo{
+    display: block;
+}
+.formulario_btn{
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: deepskyblue;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1 ease all;
+}
+.formulario_btn:hover{
+    box-shadow: 3px 0 30px rgba(163, 163, 163, 1);
+}
+.formulario_grupos-incorrecto .formulario_input_error{
+    display: block;
+}
+.formulario_grupos-incorrecto input{
+    border-color: crimson;
+}
+.formulario_grupos-incorrecto .formulario_validacion-estado{
+    color: crimson;
+    opacity: 1;
+}
+
+form{
+    font-weight: 600;
+    text-align: center;
+    border: solid darkgray;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+.bod{
+    text-align: center;
+    background-color: rgb(221, 132, 23);
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+}
+footer{
+    background-color: aqua;
+    text-align: center;
+    margin-top: 10px;
+}

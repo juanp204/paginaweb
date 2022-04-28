@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="format">
+    <script src="https://kit.fontawesome.com/f35e5a6edf.js" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: azure;">
+    <header class="head">
+        <div class="cabeza">
+            <br>
+            <a href="/">
+                <span id = "Logo">Nombre de la pagina</span>
+            </a>
+            <span class="btn-head">
+                <button class="btn" onclick="window.location.href = 'iniciar'" >Iniciar Secion</button>
+                <button class="btn" onclick="window.location.href = 'registrar'" >Registrarse</button>
+            </span>
+        </div>
+    </header>
+    <main>
+        <form action="register" method="post" class="formulario", id="formulario">
+            <!-- Grupo: usuario-->
+            <div class="formulario_grupos formulario_grupos-incorrecto", id="registrarse_usuario">
+                <label for="usuario" class="formulario_labels">usuario</label>
+                <div class="formulario_inputs">
+                    <input type="text" name="usuario" id="usuario" placeholder="usuario123">
+                    <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario_input_error">aaaaaaa</p>
+            </div>
+
+            <!-- Grupo: nombre-->
+            <div class="formulario_grupos", id="registrarse_nombre">
+                <label for="nombre" class="formulario_labels">nombre</label>
+                <div class="formulario_inputs">
+                    <input type="text" name="nombre" id="nombre" placeholder="Jhon Doe">
+                    <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario_input_error">aaaaaaa</p>
+            </div>
+
+            <!-- Grupo: password-->
+            <div class="formulario_grupos", id="registrarse_password">
+                <label for="password" class="formulario_labels">password</label>
+                <div class="formulario_inputs">
+                    <input type="text" name="password" id="password">
+                    <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario_input_error">aaaaaaa</p>
+            </div>
+
+            <!-- Grupo: password2-->
+            <div class="formulario_grupos", id="registrarse_password2">
+                <label for="password2" class="formulario_labels">password2</label>
+                <div class="formulario_inputs">
+                    <input type="text" name="password2" id="password2">
+                    <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario_input_error">aaaaaaa</p>
+            </div>
+
+            <!-- Grupo: telefono-->
+            <div class="formulario_grupos", id="registrarse_telefono">
+                <label for="telefono" class="formulario_labels">telefono</label>
+                <div class="formulario_inputs">
+                    <input type="text" name="telefono" id="telefono" placeholder="1123456789">
+                    <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
+                </div>
+                <p class="formulario_input_error">aaaaaaa</p>
+            </div>
+
+            <div class="formulario_grupos-terminos" id="grupo_terminos">
+                <label for="" class="formulario_labels">
+                    <input class="formulario_checkbox" type="checkbox" name="terminos" id="terminos">
+                    Acepta terminos y condiciones
+                </label>
+            </div>
+
+            <div class="formulario_mensaje" id="formulario_mensaje">
+                <p><b>ERROR:</b>por favor llene todos los campos</p>
+            </div>
+
+            <div class="formmulario_grupos formulario_btn-enviar">
+                <button type="submit" class="formulario_btn" value="registrar">registrarse</button>
+            </div>
+        </form>
+
+
+        <button class="btn" onclick="window.location.href = '/'" >volver</button>
+        
+    </main>
+    <hr>
+    <FOoter>
+        AAAAA
+    </FOoter>
+</body>
+</html>
