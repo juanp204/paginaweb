@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="format">
+</head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="crearrutas"></script>
+<body>
+    <% if(typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: `<%= alertTitle %>`,
+                text: `<%= alertMessage %>`,
+                icon: `<%= alertIcon %>`,
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+    
+            })
+        </script>
+        <% } %>
+    <header class="head">
+        <div class="cabeza">
+            <a href="/">
+                <span id = "Logo">RUTHS</span>
+            </a>
+            <div class="btn-head">
+                <div class="div_btn_head">
+                    <a href="/rutas">
+                        <span>Ver rutas</span>
+                    </a>
+                </div>
+                <div class="div_btn_head">
+                    <a href="/agregarruta">
+                        <span>Crear ruta</span>
+                    </a>
+                </div>
+                <div class="div_btn_head dropdown-container">
+                    <span id="dropdown-label"><%= nombre %></span> 
+                    <ul>
+                        <li> <a href="barrasinse">cerrar sesion</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>    
+    <script src="dropdownmenu"></script>
+    <form action="nuevaruta" method="post">
+        <div class="formularios_grupos">
+            <label for="salida">De:</label>
+            <input type="text" id="salida" name="salida" placeholder="De" required>
+        </div>
+        <div id="div_paradas" class="formularios_grupos"></div>
+        <div id="div_llegada" class="grupo_llegada">
+            <label for="llegada">Hasta:</label>
+            <input type="text" id="llegada" name="llegada" placeholder="Hasta" required>
+        </div>
+        <div class="formularios_grupos">
+            <label>paradas:</label>
+            <input type="button" value="+" onclick="sumar();">
+            <input type="button" value="-" onclick="restar();">
+        </div>
+        <div class="formularios_grupos">
+            <label for="carro">Seleccione su carro: </label>
+            <select name="carro" id="carro" required>
+                <option value="carro1" selected>carro1</option>
+            </select>
+        </div>
+        <div class="formularios_grupos">
+            <label for="hora">Fecha de salida: </label>
+            <input type="datetime-local" name="hora" id="hora" required>
+        </div>
+        <div>
+            <input type="submit" value="crear" id="crear">
+        </div>
+    </form>
+
+    <button id="regresar" class="regresar" onclick="window.location.href='/'">Cancelar</button>
+
+</body>
+</html>

@@ -21,5 +21,5 @@ if (cook == null | cook == "null"){
     fetch(`/barrasinse`)
     .then( data => data.text())
     .then( fichero => document.write(fichero));
-    document.cookie=`usuario=null;${expira};`;
+    //document.cookie=`usuario=null;${expira};`;
 }

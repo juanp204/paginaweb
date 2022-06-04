@@ -23,7 +23,8 @@ app.use(session({
 }));
 
 //DB
-const conectado = require('./database/db')
+const conectado = require('./database/db');
+const req = require('express/lib/request');
 
 //rutas
 app.use(require('./routes/index.js'));

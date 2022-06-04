@@ -2,6 +2,7 @@ var cookies = document.cookie.trim().split(";");
 var date = new Date();
 date.setTime(date.getTime()+(24*60*60*1000));
 var expira = "expires="+date.toUTCString();
+//document.cookie=`usuario=a;${expira};`;
 function getCookie(nombre="usuario="){
     for (var i=0; i<cookies.length; i++){
         var c = cookies[i].trim();
@@ -21,7 +22,7 @@ if (cook == null | cook == "null"){
     fetch(`/barrasinse`)
     .then( data => data.text())
     .then( fichero => document.write(fichero));
-    document.cookie=`usuario=null;${expira};`;
+    //document.cookie=`usuario=null;${expira};`;
 }
     else{
     fetch(`/barraini`)

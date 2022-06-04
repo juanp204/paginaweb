@@ -8,26 +8,38 @@
     <link rel="stylesheet" href="format">
 
 </head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <body style="background-color: azure;">
+    <% if( typeof alert != "undefined") { %>
+        <script>
+            Swal.fire({
+                title: `<%= alertTitle %>`,
+                text: `<%= alertMessage %>`,
+                icon: `<%= alertIcon %>`,
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+            })
+        </script>
+        <% } %>
     <header class="head">
         <div class="cabeza">
             <br>
             <a href="/">
-                <span id = "Logo">Nombre de la pagina</span>
+                <span id = "Logo">RUTHS</span>
             </a>
             <span class="btn-head">
-                <button class="btn" onclick="window.location.href = 'iniciar'" >Iniciar Secion</button>
+                <button class="btn" onclick="window.location.href = 'iniciar'" >Iniciar Sesión</button>
                 <button class="btn" onclick="window.location.href = 'registrar'" >Registrarse</button>
             </span>
         </div>
     </header>
     <main>
-        <form action="" class="formulario", id="formulario">
+        <form action="auth" method="post" class="formulario", id="formulario">
             <!-- Grupo: usuario-->
             <div class="formulario_grupos", id="registrarse_usuario">
                 <label for="usuario" class="formulario_labels">usuario</label>
                 <div class="formulario_inputs">
-                    <input type="text" name="usuario" id="usuario" placeholder="usuario123">
+                    <input type="text" name="user" id="usuario" placeholder="usuario123" required>
                     <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
                 </div>
                 <p class="formulario_input_error">aaaaaaa</p>
@@ -35,9 +47,9 @@
 
             <!-- Grupo: password-->
             <div class="formulario_grupos", id="registrarse_password">
-                <label for="password" class="formulario_labels">password</label>
+                <label for="password" class="formulario_labels">contraseña</label>
                 <div class="formulario_inputs">
-                    <input type="text" name="password" id="password">
+                    <input type="password" name="pass" id="password" required>
                     <i class="formulario_validacion-estado fa-solid fa-xmark"></i>
                 </div>
                 <p class="formulario_input_error">aaaaaaa</p>
@@ -48,17 +60,21 @@
             </div>
 
             <div class="formmulario_grupos formulario_btn-enviar">
-                <button type="submit" class="formulario_btn" value="iniciar">iniciar sesion</button>
+                <button type="submit" class="formulario_btn" value="iniciar">iniciar sesión</button>
             </div>
 
         </form>
 
-        <button class="btn" onclick="window.location.href = '/'" >volver</button>
+        <button class="regresar" onclick="window.location.href = '/'" >volver</button>
         
     </main>
+    <br>
+    <br>
     <hr>
-    <FOoter>
-        AAAAA
-    </FOoter>
+    <footer>
+        RUTHS
+        <hr>
+        By JP,SJ,HE
+    </footer>
 </body>
 </html>

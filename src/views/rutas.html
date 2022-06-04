@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="format">
+    <style>
+        form{
+            width: 100%;
+            text-align: center;
+        }
+        fieldset{
+            margin-left: 0px;
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="head">
+        <div class="cabeza">
+            <a href="/">
+                <span id = "Logo">RUTHS</span>
+            </a>
+            <div class="btn-head">
+                <div class="div_btn_head">
+                    <a href="/rutas">
+                        <span>Ver rutas</span>
+                    </a>
+                </div>
+                <div class="div_btn_head">
+                    <a href="/agregarruta">
+                        <span>Crear ruta</span>
+                    </a>
+                </div>
+                <div class="div_btn_head dropdown-container">
+                    <span id="dropdown-label"><%= nombre %></span> 
+                    <ul>
+                        <li> <a href="barrasinse">cerrar sesion</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>  
+    <script src="dropdownmenu"></script>
+    <label class="titulo">Rutas</label>
+    <form>
+        <div id="div_rutas">
+            <div>
+                <fieldset>
+                    <label for="">aaaaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</label>
+                </fieldset>
+                <fieldset>
+                    <button type="submit">Unirme</button>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <label for="">aaaaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</label>
+                </fieldset>
+                <fieldset>
+                    <button>Unirme</button>
+                </fieldset>
+            </div>
+        </div>
+        
+    </form>
+    <script>
+
+        var resultsArr = [];
+        <% for (var i=0, len=array.length; i<len; i++) { %>
+            resultsArr.push(<%- array[i] %>);
+        <% } %>
+        
+        console.log(resultsArr)
+
+        var div_rutas = document.getElementById("div_rutas")
+        var div = document.createElement("div");
+        var fieldset1 = document.createElement("fieldset");
+        var label = document.createElement("label");
+        var fieldset2 = document.createElement("fieldset");
+        var btn = document.createElement("button");
+
+        fieldset1.appendChild(label)
+        fieldset2.appendChild(btn)
+        div.appendChild(fieldset1)
+        div.appendChild(fieldset2)
+        label.textContent="aaaaaaaaaaaaaaaa";
+        btn.textContent="Unirme";
+        btn.type="submit";
+
+        div_rutas.appendChild(div)
+    </script>
+</body>
+</html>
