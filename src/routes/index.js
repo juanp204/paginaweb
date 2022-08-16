@@ -3,21 +3,45 @@ const router = express.Router();
 const path = require('path');
 const conectado = require('../database/db')
 const session = require('express-session')
+const puppeteer = require('puppeteer');
 
 const route = __dirname.slice(0,28);
 console.log(route)
 
-router.get('/', (req, res) => {
+jugadora = obtener()
+
+async function obtener(){
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    await page.goto('https://www.google.com/')
+    await page.type('input[class="gLFyf gsfi"]', 'mejor goleador')
+    await page.keyboard.press('Enter')
+    //await page.click('.FPdoLc lJ9FBc .gNO89b')
+    console.log("buscando")
+    await page.waitForSelector('span[class="hgKElc"]')
+    const info = await page.evaluate(()=>{
+        const element = document.querySelector('.hgKElc')
+        return element.textContent
+    })
+    console.log("encontrado")
+    await browser.close();
+    console.log("cerrado")
+    console.log(info)
+    return info
+}
+router.get('/', async(req, res) => {
+    const info = await jugadora;
     if( typeof req.session.loggedin != "undefined"){
         if(req.session.loggedin){
             res.render(path.join(route,'views/barraini.html'), {nombre: req.session.name});
         }
         else{
-            res.sendFile(path.join(route,'views/barrasinse.html'));
+            res.render(path.join(route,'views/barrasinse.html'), {jugador: info});
         }
     }
     else{
-        res.sendFile(path.join(route,'views/barrasinse.html'));
+        res.render(path.join(route,'views/barrasinse.html'), {jugador: info});
     }
 });
 
